@@ -73,7 +73,6 @@ def logout():
     return redirect('/')
 
 @app.route('/create', methods=("GET", "POST"))
-@login_required
 def create():
     if request.method == 'POST':
         title = request.form.get("title")
@@ -90,13 +89,11 @@ def create():
         return render_template("create.html")
 
 @app.route('/detail/<int:id>')
-@login_required
 def read(id):
     post = Post.query.get(id)
     return render_template("detail.html", post = post)
 
 @app.route('/update/<int:id>', methods=("GET", "POST"))
-@login_required
 def update(id):
     post = Post.query.get(id)
     if request.method == "GET":
@@ -110,7 +107,6 @@ def update(id):
         return redirect("/index")
 
 @app.route('/delete/<int:id>')
-@login_required
 def delete(id):
     post = Post.query.get(id)
 
