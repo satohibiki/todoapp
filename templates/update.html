@@ -3,20 +3,18 @@
 {% block body %}
 <form class="m-5" action="/update/{{ post.id }}" method="POST">
     <div class="form-group">
-      <label for="title">Title</label>
+      <label for="title">タイトル</label>
       <input type="text" class="form-control" name="title" value="{{ post.title }}">
     </div>
     <div class="form-group">
-      <label for="detail">Detail</label>
+      <label for="detail">詳細</label>
       <input type="text" class="form-control" name="detail" value="{{ post.detail }}">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
     </div>
     <div class="form-group pb-3">
-      <label for="due">Due</label>
-      <input type="date" name="due" value="{{ post.due.date() }}" required>
+      <label for="due">期限</label>
+      <input type="datetime-local" name="due" value="{{ post.due.date() }}" required>
     </div>
-    <a class="btn btn-success" href="/" role="button">BACK</a>
-    <button type="submit" class="btn btn-primary">Change</button>
+    <a class="btn btn-outline-secondary" href="/index" role="button">戻る</a>
+    <button type="submit" class="btn btn-outline-primary">変更</button>
 </form>
 {% endblock %}

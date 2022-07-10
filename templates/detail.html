@@ -3,11 +3,15 @@
 {% block body %}
 <h2 class="m-5" style="text-align: center;">詳細</h2>
 <div class="card w-50 mb-3" style="margin: auto;">
+    <div class="card-header">
+        タスク
+    </div>
     <div class="card-body">
-      <h2 class="card-title">{{post.title}}<span class="ml-3" style="font-size: 0.5em;">期限: {{post.due.date()}}</span></h2>
+      <h2 class="card-title">{{post.title}}</h2>
+      <p>期限: {{post.due}}</p>
       <p>{{post.detail}}</p>
-      <a class="btn btn-primary" href="/" role="button">BACK</a>
-      <a class="btn btn-primary" href="/update/{{ post.id }}" role="button">Update</a>
+      <a class="btn btn-outline-secondary" href="/index" role="button">戻る</a>
+      <a class="btn btn-outline-primary" href="/update/{{ post.id }}" role="button">変更</a>
     </div>
 </div>
 {% endblock %}

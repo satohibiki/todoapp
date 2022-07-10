@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block body %}
+<h1 style="text-align: center;">ログイン画面</h1>
+<form class="m-5" method="POST">
+    <div class="form-group">
+      <label for="">ユーザー名</label>
+      <input type="text" class="form-control" name="username">
+    </div>
+    <div class="form-group">
+      <label for="">パスワード</label>
+      <input type="password" class="form-control" name="password">
+    </div>
+    <button type="submit" value="ログイン" class="btn btn-outline-dark">ログイン</button>
+    <a class="btn btn-outline-dark" href="/signup" role="button">新規登録はこちら</a>
+</form>
+
+{% endblock %}
