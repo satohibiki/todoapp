@@ -46,7 +46,6 @@ def login():
         return render_template("login.html")
 
 @app.route('/index', methods=('GET', 'POST'))
-@login_required
 def index():
     if request.method == 'GET':
         posts = Post.query.order_by(Post.due).all()
