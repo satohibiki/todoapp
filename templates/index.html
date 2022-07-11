@@ -13,7 +13,7 @@
     <div class="card-body">
       {% if post.due.date() < today%}
       <div class="alert alert-danger" role="alert">
-        期限切れ
+        期限切れタスクです
       </div>
       {% endif %}
       <h2 class="card-title">タイトル: {{post.title}}</h2>
