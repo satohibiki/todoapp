@@ -8,7 +8,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import os
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///todoapp.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://satoki:password@localhost:8080/mydatabase"
 app.config['SECRET_KEY'] = os.urandom(24)
 db = SQLAlchemy(app)
 
